@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-    <title>Barra de navegación</title>
+    <title>Coffee Time | Empleados</title>
     
 	<link rel="stylesheet" href="css/empleados.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -13,14 +13,14 @@
 			<li><a href="empleados.html" class="item-selected">Empleados</a></li>
 			<li><a href="clientes.html">Clientes</a></li>
             <li><a href="facturas.html">Facturas</a></li>
-            <li><a href="#">Almacen</a></li>
+            <li><a href="almacen.html">Almacen</a></li>
 		</ul>
     </div>
     
     <div id="main-container">
 		<div class="buscador">
 			<label for="nombre">Empleado: </label>
-			<input class="input" type="text" id="nombre" name="nombre" placeholder="&#128100; Ingrese usuario"> 
+			<input class="input" type="text" id="nombre" name="nombre" placeholder="&#128100; Ingrese empleado"> 
 		</div>
 		<br>
 		<table>
@@ -80,8 +80,9 @@
 		</table>
 	</div>
 	<div class="btn_send">
-		<input class="btn_reset" type="reset" value="Modificar">
-		<input class="btn_submit" type="submit" value="Ingresar">
+		<input class="btn_reset" type="reset" value="Agregar Empleado" onclick="location.href='agregar-empleado.html'">
+		<input class="btn_submit" type="submit" value="Modificar Empleado" onclick="location.href='modificar-empleado.html'">
+		<input class="btn_submit" type="submit" value="Eliminar Empleado" onclick="location.href='eliminar-empleado.html'">
 	</div>
 </body>
 </html>

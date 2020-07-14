@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Coffee Time | Agregar Empleado</title>
+        <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+        <link href="css/login.css" rel=stylesheet>
+        <script src="js/login.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="form_top">
+                <h2>Nuevo<span>Empleado</span></h2>
+            </div>
+            <form name="n_form" class="form_reg" method="POST" action="php/insertData.php" onsubmit="return validar()" enctype="multipart/form-data">
+                <div>
+                    <label id="box-title">Ingrese los datos del empleado: </label>
+                    <br>
+                </div>
+                <div>
+                    <label for="nombre">Codigo: </label>
+                    <input class="input" type="text" id="nombre" name="nombre" placeholder="&#128100; Ingrese codigo del empleado"> 
+                </div>
+                <div>
+                    <label for="nombre">Nombre: </label>
+                    <input class="input" type="text" id="nombre" name="nombre" placeholder="&#128100; Ingrese nombre del empleado"> 
+                </div>
+                <div>
+                    <label for="p_apellido">Apellido Paterno: </label>
+                    <input class="input" type="text" id="p_apellido" name="p_apellido" placeholder="&#128100; Ingrese apellido paterno">
+                </div>
+                <div>
+                    <label for="p_apellido">Apellido Materno: </label>
+                    <input class="input" type="text" id="p_apellido" name="p_apellido" placeholder="&#128100; Ingrese apellido materno">
+                </div>
+                <div>
+                    <label for="fech_nac">Fecha de Nacimiento: </label>
+                    <input class="input" type="date" id="fech_nac" name="fech_nac" placeholder="&#128100; Ingrese fecha de nacimiento">
+                </div>
+                <div id="field2">
+                    <label for="telefono">Telefono:</label>
+                    <input class="input" type="text" id="telefono" name="telefono"  onblur="revisarNumero( this )" placeholder="&#9742; Ingrese numero de telefono">
+                </div>
+                <div>
+                    <label for="direccion">Direccion: </label>
+                    <input class="input" type="text" id="direccion" name="direccion" placeholder="&#127968; Ingrese direccion del hogar">
+                </div>
+                <div>
+                    <label for="p_apellido">Codigo de Encargado: </label>
+                    <input class="input" type="text" id="p_apellido" name="p_apellido" placeholder="&#128100; Ingrese codigo de encargado">
+                </div>       
+                <div class="btn_form">
+                    <input class="btn_reset" type="reset" value="Volver" onclick="location.href='empleados.html'">
+                    <input class="btn_submit" type="submit" value="Ingresar">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

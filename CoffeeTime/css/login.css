@@ -1,9 +1,10 @@
 html {
     font-size: 16px;
     font-family: 'Gugi', cursive;
-    background-image: url("../img/login.jpg");
+    background-image: url("../img/fondoEmpleados.jpg");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     width: 100%;  
 }
 
@@ -19,12 +20,12 @@ html {
     width: 100%;
     text-align: center;
     padding: 2rem 0 1rem;
-    border-top: solid .5rem rgb(95, 82, 77);
+    border-top: solid .5rem rgb(170, 164, 162);
 }
 
 .form_top h2 {
     font-weight: bold;
-    color: rgb(97, 92, 90);
+    color: rgb(170, 164, 162);
 }
 
 h2 span {
@@ -64,7 +65,7 @@ h2 span {
     border-bottom: solid rgb(46, 26, 19) .2rem;
 }
 
-.btn_submit, .btn_reset {
+.btn_submit, .btn_reset, #btn_simple{
     width: 30%;
     border-bottom: none;
     background-color: rgb(46, 26, 19);
@@ -109,4 +110,13 @@ input.error, textarea.error {
     transition: all .5s;
     width: 100%;
     font-family: 'Gugi', cursive;
+}
+
+#btn_simple {
+    width: 100%;
+    border-bottom: none;
+    background-color: rgb(46, 26, 19);
+    color: white;
+    font-family: 'Gugi', cursive;
+    border: none;
 }

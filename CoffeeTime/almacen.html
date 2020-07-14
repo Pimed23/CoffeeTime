@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-    <title>Barra de navegación</title>
+    <title>Coffee Time | Almacen</title>
     
 	<link rel="stylesheet" href="css/empleados.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
     <div id="main-container">
 		<div class="buscador">
 			<label for="nombre">Producto: </label>
-			<input class="input" type="text" id="nombre" name="nombre" placeholder="&#128100; Ingrese usuario"> 
+			<input class="input" type="text" id="nombre" name="nombre" placeholder="&#128100; Ingrese producto"> 
 		</div>
 		<br>
 		<table>
@@ -60,8 +60,9 @@
 		</table>
 	</div>
 	<div class="btn_send">
-		<input class="btn_reset" type="reset" value="Modificar">
-		<input class="btn_submit" type="submit" value="Ingresar">
+		<input class="btn_reset" type="reset" value="Agregar Producto" onclick="location.href='agregar-producto.html'">
+		<input class="btn_submit" type="submit" value="Modificar Producto" onclick="location.href='modificar-producto.html'">
+		<input class="btn_submit" type="submit" value="Eliminar Producto" onclick="location.href='eliminar-producto.html'">
 	</div>
 </body>
 </html>
