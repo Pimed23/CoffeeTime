@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Barra de navegación</title>
+    
+	<link rel="stylesheet" href="css/empleados.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div id="menu">
+		<ul>
+			<li><a href="empleados.html">Empleados</a></li>
+			<li><a href="clientes.html" class="item-selected">Clientes</a></li>
+            <li><a href="facturas.html">Facturas</a></li>
+            <li><a href="#">Almacen</a></li>
+		</ul>
+	</div>
+
+    <div id="main-container">
+		<div class="buscador">
+			<label for="nombre">Cliente: </label>
+			<input class="input" type="text" id="nombre" name="nombre" placeholder="&#128100; Ingrese usuario"> 
+		</div>
+		<br>
+		<table>
+			<thead>
+				<tr>
+					<th>Codigo</th>
+					<th>Apellido Paterno</th>
+					<th>Apellido Materno</th>
+					<th>Nombre</th>
+					<th>Num. Contacto</th>
+				</tr>
+			</thead>
+
+			<tr>
+				<td>123</td>
+				<td>Gonza</td>
+				<td>Condori</td>
+				<td>Gabriel</td>
+				<td>993393999</td>
+			</tr>
+
+			<tr>
+				<td>123</td>
+				<td>Gonza</td>
+				<td>Condori</td>
+				<td>Gabriel</td>
+				<td>993393999</td>
+			</tr>
+
+			<tr>
+				<td>123</td>
+				<td>Gonza</td>
+				<td>Condori</td>
+				<td>Gabriel</td>
+				<td>993393999</td>
+			</tr>
+		</table>
+	</div>
+	<div class="btn_send">
+		<input class="btn_reset" type="reset" value="Modificar">
+		<input class="btn_submit" type="submit" value="Ingresar">
+	</div>
+</body>
+</html>

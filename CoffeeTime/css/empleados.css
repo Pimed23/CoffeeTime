@@ -1,0 +1,110 @@
+body{
+    background-color: #999290; 
+    padding: 60px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#main-container{
+	margin: 40px auto;
+	width: 1000px;
+}
+
+table{
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td{
+	padding: 20px;
+}
+
+thead{
+	background-color: #965136;
+	border-bottom: solid 5px #3f2217;
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: #965136;
+	color: white;
+}
+
+		
+#menu{
+    background-color: #3f2217;
+}
+
+#menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul li{
+    display: inline-block;
+}
+
+#menu ul li a{
+    color: white;
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+}
+
+#menu ul li a:hover{
+    background-color: #965136;
+}
+
+.item-r{
+    float: right;
+}
+
+.btn_send {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.btn_submit, .btn_reset {
+    background-color: #EFEFEF;
+    padding: .5rem;
+    margin: .5rem 0;
+    border: none;
+    border-bottom: solid rgb(46, 26, 19) .2rem;
+    transition: all .5s;
+}
+
+.btn_submit, .btn_reset {
+    width: 30%;
+    border-bottom: none;
+    background-color: rgb(46, 26, 19);
+    color: white;
+}
+
+.input {
+    background-color: #EFEFEF;
+    padding: .5rem;
+    margin: .5rem .5rem;
+    border: none;
+    border-bottom: solid rgb(46, 26, 19) .2rem;
+    transition: all .5s;
+    width: 30%;
+}
+
+.input:focus {
+    border-bottom: solid rgb(46, 26, 19) .2rem;
+}
+
+.item-selected{
+	background: #965136;
+}
+
+.buscador{
+    font-weight: bold;
+}

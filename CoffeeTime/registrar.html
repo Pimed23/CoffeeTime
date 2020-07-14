@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Formulario</title>
+        <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+        <link href="css/login.css" rel=stylesheet>
+        <script src="js/login.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="form_top">
+                <h2>Registrar<span>Cliente</span></h2>
+            </div>
+            <form name="n_form" class="form_reg" method="POST" action="php/insertData.php" onsubmit="return validar()" enctype="multipart/form-data">
+                <div>
+                    <label id="box-title">Datos del Cliente: </label>
+                    <br>
+                </div>
+                <div>
+                    <label for="nombre">Nombre: </label>
+                    <input class="input" type="text" id="nombre" name="nombre" onblur="revisarTexto( this )" placeholder="&#128100; Ingrese nombre"> 
+                </div>
+                <div>
+                    <label for="p_apellido">Apellido Paterno: </label>
+                    <input class="input" type="text" id="p_apellido" name="p_apellido" placeholder="&#128100; Ingrese primer apellido">
+                </div>
+                <div>
+                    <label for="s_apellido">Apellido Materno </label>
+                    <input class="input" type="text" id="s_apellido" name="s_apellido" placeholder="&#128100; Ingrese segundo apellido">
+                </div>
+                <div>
+                    <label for="telefono">Telefono:</label>
+                    <input class="input" type="text" id="telefono" name="telefono"  onblur="revisarNumero( this )" placeholder="&#9742; Ingrese numero de telefono">
+                </div>
+                <div class="btn_form">
+                    <input class="btn_reset" type="reset" value="Volver">
+                    <input class="btn_submit" type="submit" value="Registrar">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
