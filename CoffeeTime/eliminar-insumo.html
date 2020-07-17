@@ -14,43 +14,39 @@
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
             crossorigin="anonymous">
         </script>
-        <script type="text/javascript" src="js/eliminarCliente.js"></script>
+        <script type="text/javascript" src="js/eliminarInsumo.js"></script>
     </head>
     <body>
         <div class="container">
             <div class="form_top">
-                <h2>Eliminar<span>Cliente</span></h2>
+                <h2>Eliminar<span>Insumo</span></h2>
             </div>
             <form name="n_form_mod" class="form_reg" method="POST" onsubmit="return enviar();">
                 <div>
-                    <input class="input" type="text" id="cod_mod" name="cod_mod" placeholder="&#128100; Ingrese el codigo del cliente"> 
-                    <input type="submit" id="btn_simple" class="btn_mod" value="Buscar cliente">
+                    <input class="input" type="text" id="cod_mod" name="cod_mod" placeholder="&#128100; Ingrese el codigo del insumo"> 
+                    <input type="submit" id="btn_simple" class="btn_mod" value="Buscar insumo">
                 </div>
             </form>
         </form>
-        <form name="n_form" class="form_reg" method="POST" action="php/eliminarCliente.php" onsubmit="return validar()" enctype="multipart/form-data">
+        <form name="n_form" class="form_reg" method="POST" action="php/eliminarInsumo.php" onsubmit="return validar()" enctype="multipart/form-data">
             <div>
-                <label id="box-title">Datos del cliente: </label>
+                <label id="box-title">Datos del producto: </label>
                 <br>
             </div>
             <div>
                 <label for="codigo">Codigo: </label>
-                <input class="input" type="text" id="codigo" name="codigo" placeholder="&#128100; Codigo del cliente" readonly>
+                <input class="input" type="text" id="codigo" name="codigo" placeholder="&#128100; Codigo del insumo" readonly>
             </div>
             <div>
                 <label for="nombre">Nombre: </label>
-                <input class="input" type="text" id="nombre" name="nombre" placeholder="&#128100; Nombre del cliente" readonly> 
+                <input class="input" type="text" id="nombre" name="nombre" placeholder="&#128100; Nombre del insumo" readonly> 
             </div>
             <div>
-                <label for="p_apellido">Apellido Paterno: </label>
-                <input class="input" type="text" id="p_apellido" name="p_apellido" placeholder="&#128100; Apellido paterno del cliente" readonly>
-            </div>
-            <div>
-                <label for="s_apellido">Apellido Materno: </label>
-                <input class="input" type="text" id="s_apellido" name="s_apellido" placeholder="&#128100; Apellido materno del cliente" readonly>
+                <label for="cantidad">Cantidad: </label>
+                <input class="input" type="text" id="cantidad" name="cantidad" placeholder="# Cantidad del insumo" readonly>
             </div>
             <div class="btn_form">
-                <input class="btn_reset" type="reset" value="Volver" onclick="location.href='clientes.html'">
+                <input class="btn_reset" type="reset" value="Volver" onclick="location.href='almacen.html'">
                 <input class="btn_submit" type="submit" value="Eliminar">
             </div>
         </form>

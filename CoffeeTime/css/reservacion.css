@@ -27,9 +27,15 @@
 .content-image {
     width: 290px;
     height: 200px;
-    object-fit: cover;    
+    object-fit: cover;
 }
 
 .link {
     color: white;
 }
+
+.single-menu {
+    margin-left: auto;
+    margin-right: auto;
+}
+

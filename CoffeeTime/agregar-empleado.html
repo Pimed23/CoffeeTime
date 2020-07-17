@@ -11,14 +11,14 @@
             <div class="form_top">
                 <h2>Nuevo<span>Empleado</span></h2>
             </div>
-            <form name="n_form" class="form_reg" method="POST" action="php/insertData.php" onsubmit="return validar()" enctype="multipart/form-data">
+            <form name="n_form" class="form_reg" method="POST" action="php/insertEmpleado.php" onsubmit="return validar()" enctype="multipart/form-data">
                 <div>
                     <label id="box-title">Ingrese los datos del empleado: </label>
                     <br>
                 </div>
                 <div>
                     <label for="nombre">Codigo: </label>
-                    <input class="input" type="text" id="nombre" name="nombre" placeholder="&#128100; Ingrese codigo del empleado"> 
+                    <input class="input" type="text" id="codigo" name="codigo" placeholder="&#128100; Ingrese codigo del empleado"> 
                 </div>
                 <div>
                     <label for="nombre">Nombre: </label>
@@ -30,7 +30,16 @@
                 </div>
                 <div>
                     <label for="p_apellido">Apellido Materno: </label>
-                    <input class="input" type="text" id="p_apellido" name="p_apellido" placeholder="&#128100; Ingrese apellido materno">
+                    <input class="input" type="text" id="s_apellido" name="s_apellido" placeholder="&#128100; Ingrese apellido materno">
+                </div>
+                <label>Cargo:</label>
+                <div class="box">
+                    <select name="cargo" size="1">
+                        <option value="0">Seleccione el cargo</option>
+                        <option value="EMP">Empleado</option>
+                        <option value="ADM">Administrativo</option>
+                        <option value="GER">Gerente</option>
+                    </select>
                 </div>
                 <div>
                     <label for="fech_nac">Fecha de Nacimiento: </label>
@@ -45,8 +54,8 @@
                     <input class="input" type="text" id="direccion" name="direccion" placeholder="&#127968; Ingrese direccion del hogar">
                 </div>
                 <div>
-                    <label for="p_apellido">Codigo de Encargado: </label>
-                    <input class="input" type="text" id="p_apellido" name="p_apellido" placeholder="&#128100; Ingrese codigo de encargado">
+                    <label for="cod_jefe">Codigo de Encargado: </label>
+                    <input class="input" type="text" id="cod_jefe" name="cod_jefe" placeholder="&#128100; Ingrese codigo de encargado">
                 </div>       
                 <div class="btn_form">
                     <input class="btn_reset" type="reset" value="Volver" onclick="location.href='empleados.html'">
