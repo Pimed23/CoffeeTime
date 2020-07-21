@@ -17,29 +17,6 @@
 	</script>
 	<script type="text/javascript" src="js/mostrarEmpleado.js"></script>
 
-	<script>
-		function myFunction() {
-			var filtro = document.getElementById('filtro').value;
-			var datos = 'filtro='+filtro;
-			console.log(datos);
-			
-			$(document).ready(function(){
-    			var ajax = $.ajax({
-					data: {},
-					url: "php/mostrarEmpleado.php",
-					type: 'POST',
-					success: function( response ) {
-						var empleados = JSON.parse( response );
-						cargar_empleados( empleados );
-					},
-					error: function(response, status, error) {
-						alert("No encontrado");
-					}
-				});
-			});
-		}
-	</script>
-
 </head>
 <body>
 	<div id="menu">

@@ -1,4 +1,4 @@
-cargar_clientes = function( insumos ) {
+cargar_insumos = function( insumos ) {
     var header = "<thead>\n" 
                     +"<tr>\n"
                         +"<th>Codigo</th>\n"
@@ -29,10 +29,12 @@ $(document).ready(function(){
         type: 'POST',
         success: function( response ) {
             var insumos = JSON.parse( response );
-            cargar_clientes( insumos );
+            cargar_insumos( insumos );
         },
         error: function(response, status, error) {
             alert("No encontrado");
         }
     });
 });
+
+

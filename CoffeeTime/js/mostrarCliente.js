@@ -36,4 +36,28 @@ $(document).ready(function(){
             alert("No encontrado");
         }
     });
-});
+})
+
+
+function myFunction(){
+    var filtro = document.getElementById('filtro').value;
+    var datos = 'filtro='+filtro;
+    console.log(datos);
+    
+    $(document).ready(function(){
+        var ajax = $.ajax({
+            data: datos,
+            url: "php/filtrarCliente.php",
+            type: 'POST',
+            success: function( response ) {
+                console.log(response);
+                var empleados = JSON.parse( response );
+                limpiar();
+                cargar_clientes( empleados );
+            },
+            error: function(response, status, error) {
+                alert("No encontrado");
+            }
+        });
+    });
+}

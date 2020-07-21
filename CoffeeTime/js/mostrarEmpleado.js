@@ -26,8 +26,13 @@ cargar_empleados = function( empleados ) {
                 +"<td>"+empleados[i]['jefe']+"</td>\n"
                +"</tr>"
         $('.empleados').append(row);
-        console.log(row);
     }
+}
+
+function limpiar() {
+    $("thead").remove();
+    $("tr").remove();
+    $("td").remove();
 }
 
 $(document).ready(function(){
@@ -44,4 +49,27 @@ $(document).ready(function(){
         }
     });
 });
+
+function myFunction(){
+    var filtro = document.getElementById('filtro').value;
+    var datos = 'filtro='+filtro;
+    console.log(datos);
+    
+    $(document).ready(function(){
+        var ajax = $.ajax({
+            data: datos,
+            url: "php/filtrarEmpleados.php",
+            type: 'POST',
+            success: function( response ) {
+                console.log(response);
+                var empleados = JSON.parse( response );
+                limpiar();
+                cargar_empleados( empleados );
+            },
+            error: function(response, status, error) {
+                alert("No encontrado");
+            }
+        });
+    });
+}
 
