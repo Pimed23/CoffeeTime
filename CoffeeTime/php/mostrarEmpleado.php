@@ -1,7 +1,7 @@
 <?php
     require("conectionDB.php");
     
-    $sucursal = 'MIR';
+    $sucursal = 'JLB';
     $query = "CALL selectEmpleado('$sucursal')";
     $result = mysqli_query( $conection, $query );
 

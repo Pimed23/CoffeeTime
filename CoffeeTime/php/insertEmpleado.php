@@ -23,11 +23,6 @@
         if($clave == 'M') $sucursal = 'MIR';
         if($clave == 'P') $sucursal = 'PAU';
         
-        $query_insert0 = "CALL insertarPersona('$codigo', '$nombre', '$p_apellido', '$s_apellido', '$telefono', '$fech_nac', '$direccion');";        
-        if( mysqli_query( $conection, $query_insert0 ) == false ) {
-            echo mysqli_error($conection);
-        }
-        
         $query_insert1 = "CALL insertarEmpleado('$codigo', '$nombre', '$p_apellido', '$s_apellido', '$telefono', '$fech_nac', '$direccion', '$cod_jefe', '$cargo', '$sucursal')";
         if( mysqli_query( $conection, $query_insert1 ) == false ) {
             echo mysqli_error($conection);
