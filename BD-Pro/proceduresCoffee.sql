@@ -143,10 +143,12 @@ END$$
 -- SELECT EMPLEADO
 DELIMITER $$
 DROP PROCEDURE IF EXISTS selectEmpleado;
-CREATE PROCEDURE selectEmpleado()
+CREATE PROCEDURE selectEmpleado(
+	IN _id_sucursal VARCHAR(3))
 BEGIN
 	SELECT a.id_empleado, a.p_apellido, a.s_apellido, a.nombre, a.fech_nac, a.num_contacto, a.direccion, b.nombre as 'jefe' FROM Empleados a
 INNER JOIN Empleados b ON a.id_jefe = b.id_empleado
+WHERE _id_sucursal = a.id_sucursal
 ORDER BY a.id_empleado; 
 END$$
 

@@ -8,7 +8,7 @@ CALL insertarCargo('ADM','Administrativo');
 CALL insertarSucursal('MIR','Miraflores','Av. Progreso #256','996513256');
 CALL insertarSucursal('CER','Cercado','Calle San Francisto #320','998877665');
 CALL insertarSucursal('JLB','Jose Luis Bustamante y Rivero','Av. La Cultura #1245','996655443');
-CALL insertarSucursal('CAY','Cayma','Av. Cayma #236','995544332');
+CALL insertarSucursal('PAU','Paucarpata','Av. Jesus #2306','995544332');
 
 -- GERENTE
 INSERT INTO Empleados(id_empleado, nombre, p_apellido, s_apellido, num_contacto, fech_nac, direccion, id_cargo, id_sucursal) 

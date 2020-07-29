@@ -17,10 +17,22 @@
     if( $arr0[0] != NULL ) {
         echo "-1";
     } else {
-        $query_insert = "CALL insertarEmpleado('$codigo', '$nombre', '$p_apellido', '$s_apellido', '$telefono', '$fech_nac', '$direccion', '$cod_jefe', '$cargo', 'MIR')";
-        if( mysqli_query( $conection, $query_insert ) == false ) {
-            echo "No se inserto el empleado...";
+        $clave = substr($codigo, 0, 1);
+        if($clave == 'B') $sucursal = 'JLB';
+        if($clave == 'C') $sucursal = 'CER';
+        if($clave == 'M') $sucursal = 'MIR';
+        if($clave == 'P') $sucursal = 'PAU';
+        
+        $query_insert0 = "CALL insertarPersona('$codigo', '$nombre', '$p_apellido', '$s_apellido', '$telefono', '$fech_nac', '$direccion');";        
+        if( mysqli_query( $conection, $query_insert0 ) == false ) {
+            echo mysqli_error($conection);
+        }
+        
+        $query_insert1 = "CALL insertarEmpleado('$codigo', '$nombre', '$p_apellido', '$s_apellido', '$telefono', '$fech_nac', '$direccion', '$cod_jefe', '$cargo', '$sucursal')";
+        if( mysqli_query( $conection, $query_insert1 ) == false ) {
+            echo mysqli_error($conection);
         }
     }
     header ("Location: http://localhost/CoffeeTime/empleados.html");
 ?>
+
