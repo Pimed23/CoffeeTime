@@ -299,29 +299,6 @@ CREATE TABLE Ordenes_Facturas(
 
 ALTER TABLE Ordenes_Facturas ADD PRIMARY KEY(id_orden, id_factura);
 
--- PATICIONES
-CREATE TABLE Personas(
-	id_persona VARCHAR(3) NOT NULL PRIMARY KEY,
-	nombre VARCHAR(50) NOT NULL,
-	p_apellido VARCHAR(50) NOT NULL,
-	s_apellido VARCHAR(50) NOT NULL,
-	num_contacto VARCHAR(9) NOT NULL,
-	fech_nac DATE NOT NULL,
-	direccion VARCHAR(100) NOT NULL
-) PARTITION BY RANGE COLUMNS(id_persona)(
-	PARTITION empBustamante VALUES LESS THAN ('B99'),
-    PARTITION empCercado VALUES LESS THAN ('C99'),
-    PARTITION empMiraflores VALUES LESS THAN ('M99'),
-    PARTITION empPaucarpata VALUES LESS THAN ('P99')
-);
-
-CREATE VIEW Bustamante AS SELECT * FROM Personas PARTITION(empBustamante);
-CREATE VIEW Cercado AS SELECT * FROM Personas PARTITION(empCercado);
-CREATE VIEW Miraflores AS SELECT * FROM Personas PARTITION(empMiraflores);
-CREATE VIEW Paucarpata AS SELECT * FROM Personas PARTITION(empPaucarpata);
-
-
-
 
 
 
