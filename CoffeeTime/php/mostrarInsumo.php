@@ -1,7 +1,8 @@
 <?php
     require("conectionDB.php");
-    
-    $query = "CALL selectInsumo()";
+
+    $filtro = 'B%';
+    $query = "CALL selectInsumo('$filtro')";
     $result = mysqli_query( $conection, $query );
 
     $json_array = array();

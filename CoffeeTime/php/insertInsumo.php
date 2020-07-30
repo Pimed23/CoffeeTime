@@ -15,7 +15,8 @@
     } else {
         $query_insert = "CALL insertarInsumo('$codigo', '$nombre', $cantidad, $umbral, '$cod_prov')";
         if( mysqli_query( $conection, $query_insert ) == false ) {
-            echo "No se inserto el insumo...";
+            echo mysqli_error($conection);
         }
     }
+    header ("Location: http://localhost/CoffeeTime/almacen.html");
 ?>

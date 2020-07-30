@@ -163,10 +163,12 @@ END$$
 -- SELECT INSUMOS
 DELIMITER $$
 DROP PROCEDURE IF EXISTS selectInsumo;
-CREATE PROCEDURE selectInsumo()
+CREATE PROCEDURE selectInsumo( IN _word VARCHAR(2))
 BEGIN
 	SELECT id_insumo, nombre, cantidad, umbral, proveedor FROM Insumos a
-INNER JOIN Proveedores b ON a.id_proveedor = b.id_proveedor; 
+INNER JOIN Proveedores b ON a.id_proveedor = b.id_proveedor
+WHERE id_insumo LIKE _word
+ORDER BY id_insumo;
 END$$
 
 -- ACTUALIZAR EMPLEADO
