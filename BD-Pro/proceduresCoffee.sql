@@ -113,6 +113,20 @@ BEGIN
 	VALUES(_id_cliente, _nombre, _p_apellido, _s_apellido, _num_contacto);
 END$$
 
+-- INSERT RESERVACION
+DELIMITER $$
+DROP PROCEDURE IF EXISTS insertarReservacion;
+CREATE PROCEDURE insertarReservacion(
+	IN _id_reservacion VARCHAR(3),
+	IN _fecha DATE,
+	IN _hora TIME,
+	IN _id_cliente VARCHAR(3))
+
+BEGIN
+	INSERT INTO Reservaciones(id_reservacion, fecha, hora, id_cliente) 
+	VALUES(_id_reservacion, _fecha, _hora, _id_cliente);
+END$$
+
 -- BUSCAR EMPLEADO
 DELIMITER $$
 DROP PROCEDURE IF EXISTS buscarEmpleado;
@@ -155,9 +169,9 @@ END$$
 -- SELECT CLIENTE
 DELIMITER $$
 DROP PROCEDURE IF EXISTS selectCliente;
-CREATE PROCEDURE selectCliente()
+CREATE PROCEDURE selectCliente( IN _word VARCHAR(2))
 BEGIN
-	SELECT * FROM Clientes;
+	SELECT * FROM Clientes WHERE id_cliente LIKE _word;
 END$$
 
 -- SELECT INSUMOS
@@ -169,6 +183,17 @@ BEGIN
 INNER JOIN Proveedores b ON a.id_proveedor = b.id_proveedor
 WHERE id_insumo LIKE _word
 ORDER BY id_insumo;
+END$$
+
+-- SELECT RESERVACIONES
+DELIMITER $$
+DROP PROCEDURE IF EXISTS selectReservaciones;
+CREATE PROCEDURE selectReservaciones( IN _word VARCHAR(2))
+BEGIN
+	SELECT id_reservacion, hora, fecha, b.nombre FROM Reservaciones a
+INNER JOIN Clientes b ON a.id_cliente = b.id_cliente
+WHERE id_reservacion LIKE _word
+ORDER BY id_reservacion;
 END$$
 
 -- ACTUALIZAR EMPLEADO

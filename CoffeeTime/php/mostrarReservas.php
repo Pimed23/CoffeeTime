@@ -1,8 +1,8 @@
 <?php
     require("conectionDB.php");
-    
+
     $filtro = 'B%';
-    $query = "CALL selectCliente('$filtro')";
+    $query = "CALL selectReservaciones('$filtro')";
     $result = mysqli_query( $conection, $query );
 
     $json_array = array();

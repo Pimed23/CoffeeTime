@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-    <title>Coffee Time | Empleados</title>
+    <title>Coffee Time | Reservas</title>
     
 	<link rel="stylesheet" href="css/empleados.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -15,34 +15,24 @@
 		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
 		crossorigin="anonymous">
 	</script>
-	<script type="text/javascript" src="js/mostrarEmpleado.js"></script>
+	<script type="text/javascript" src="js/mostrarReservas.js"></script>
 
 </head>
 <body>
 	<div id="menu">
 		<ul>
-			<li><a href="empleados.html" class="item-selected">Empleados</a></li>
+			<li><a href="empleados.html">Empleados</a></li>
 			<li><a href="clientes.html">Clientes</a></li>
             <li><a href="facturas.html">Facturas</a></li>
 			<li><a href="almacen.html">Almacen</a></li>
-			<li><a href="reservas.html">Reservaciones</a></li>
+			<li><a href="reservas.html" class="item-selected">Reservaciones</a></li>
 		</ul>
     </div>
     
     <div id="main-container">
-		<div class="buscador">
-			<label for="filtro">Empleado: </label>
-			<input class="input" type="text" id="filtro" name="filtro" onkeyup="myFunction()" placeholder="&#128100; Ingrese el nombre del empleado"> 
-		</div>
-		<br>
-		<table class=empleados>
+		<table class=reservas>
 			<!-- DINAMIC TABLE-->
 		</table>
-	</div>
-	<div class="btn_send">
-		<input class="btn_reset" type="reset" value="Agregar Empleado" onclick="location.href='agregar-empleado.html'">
-		<input class="btn_submit" type="submit" value="Modificar Empleado" onclick="location.href='modificar-empleado.html'">
-		<input class="btn_submit" type="submit" value="Eliminar Empleado" onclick="location.href='eliminar-empleado.html'">
 	</div>
 </body>
 </html>

@@ -181,13 +181,7 @@ CREATE TABLE Reservaciones(
 	id_reservacion VARCHAR(3) NOT NULL PRIMARY KEY,
 	fecha DATE NOT NULL,
 	hora TIME NOT NULL,
-	id_mesa VARCHAR(3) NOT NULL,
 	id_cliente VARCHAR(3) NOT NULL,
-	
-	INDEX `idx_mesa`(id_mesa),
-    	CONSTRAINT `fk_reservacion_mesa`
-    	FOREIGN KEY(id_mesa)
-    	REFERENCES Mesas(id_mesa) ON UPDATE CASCADE ON DELETE RESTRICT,
 	
 	INDEX `idx_cliente`(id_cliente),
     	CONSTRAINT `fk_reservacion_cliente`
