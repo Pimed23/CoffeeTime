@@ -22,6 +22,12 @@ cargar_insumos = function( insumos ) {
     }
 }
 
+function limpiar() {
+    $("thead").remove();
+    $("tr").remove();
+    $("td").remove();
+}
+
 $(document).ready(function(){
     var ajax = $.ajax({
         data: {},
@@ -38,3 +44,25 @@ $(document).ready(function(){
 });
 
 
+function myFunction(){
+    var filtro = document.getElementById('filtro').value;
+    var datos = 'filtro='+filtro;
+    console.log(datos);
+    
+    $(document).ready(function(){
+        var ajax = $.ajax({
+            data: datos,
+            url: "php/filtrarInsumo.php",
+            type: 'POST',
+            success: function( response ) {
+                console.log(response);
+                var insumos = JSON.parse( response );
+                limpiar();
+                cargar_insumos( insumos );
+            },
+            error: function(response, status, error) {
+                alert("No encontrado");
+            }
+        });
+    });
+}

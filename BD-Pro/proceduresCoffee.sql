@@ -275,12 +275,13 @@ END$$
 DELIMITER $$
 DROP PROCEDURE IF EXISTS filtrarEmpleado;
 CREATE PROCEDURE filtrarEmpleado(
-	IN _word VARCHAR(3))
+	IN _word VARCHAR(3), 
+	IN _local VARCHAR(3))
 
 BEGIN
 	SELECT a.id_empleado, a.p_apellido, a.s_apellido, a.nombre, a.fech_nac, a.num_contacto, a.direccion, b.nombre as 'jefe' FROM Empleados a
 	INNER JOIN Empleados b ON a.id_jefe = b.id_empleado
-	WHERE a.nombre LIKE _word
+	WHERE a.nombre LIKE _word AND _local = a.id_sucursal
 	ORDER BY a.id_empleado;
 END$$
 
@@ -288,12 +289,26 @@ END$$
 DELIMITER $$
 DROP PROCEDURE IF EXISTS filtrarCliente;
 CREATE PROCEDURE filtrarCliente(
-	IN _word VARCHAR(3))
+	IN _word VARCHAR(3),
+	IN _local VARCHAR(2))
 
 BEGIN
-	SELECT * FROM Clientes WHERE nombre LIKE _word;
+	SELECT * FROM Clientes WHERE nombre LIKE _word AND id_cliente LIKE _local;
 END$$
 
+-- FILTRAR INSUMOS
+DELIMITER $$
+DROP PROCEDURE IF EXISTS filtrarInsumo;
+CREATE PROCEDURE filtrarInsumo(
+	IN _word VARCHAR(3),
+	IN _local VARCHAR(2))
+
+BEGIN
+	SELECT id_insumo, nombre, cantidad, umbral, proveedor FROM Insumos a
+	INNER JOIN Proveedores b ON a.id_proveedor = b.id_proveedor
+	WHERE nombre LIKE _word AND id_insumo LIKE _local
+	ORDER BY id_insumo;
+END$$
 
 
 

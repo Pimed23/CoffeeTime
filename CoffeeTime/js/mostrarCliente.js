@@ -22,6 +22,11 @@ cargar_clientes = function( clientes ) {
     }
 }
 
+function limpiar() {
+    $("thead").remove();
+    $("tr").remove();
+    $("td").remove();
+}
 
 $(document).ready(function(){
     var ajax = $.ajax({
@@ -36,8 +41,7 @@ $(document).ready(function(){
             alert("No encontrado");
         }
     });
-})
-
+});
 
 function myFunction(){
     var filtro = document.getElementById('filtro').value;
@@ -51,9 +55,9 @@ function myFunction(){
             type: 'POST',
             success: function( response ) {
                 console.log(response);
-                var empleados = JSON.parse( response );
+                var clientes = JSON.parse( response );
                 limpiar();
-                cargar_clientes( empleados );
+                cargar_clientes( clientes );
             },
             error: function(response, status, error) {
                 alert("No encontrado");
