@@ -113,6 +113,19 @@ BEGIN
 	VALUES(_id_cliente, _nombre, _p_apellido, _s_apellido, _num_contacto);
 END$$
 
+-- INSERT PRODUCTO
+DELIMITER $$
+DROP PROCEDURE IF EXISTS insertarProducto;
+CREATE PROCEDURE insertarProducto(
+	IN _id_producto VARCHAR(3),
+	IN _nombre VARCHAR(50),
+	IN _precio VARCHAR(50),
+	IN _imagen VARCHAR(100))
+BEGIN
+	INSERT INTO Productos(id_producto, nombre, precio, imagen) 
+	VALUES(_id_producto, _nombre, _precio, _imagen);
+END$$
+
 -- INSERT RESERVACION
 DELIMITER $$
 DROP PROCEDURE IF EXISTS insertarReservacion;
@@ -183,6 +196,14 @@ BEGIN
 INNER JOIN Proveedores b ON a.id_proveedor = b.id_proveedor
 WHERE id_insumo LIKE _word
 ORDER BY id_insumo;
+END$$
+
+-- SELECT PRODUCTOS
+DELIMITER $$
+DROP PROCEDURE IF EXISTS selectProducto;
+CREATE PROCEDURE selectProducto()
+BEGIN
+	SELECT * FROM Productos; 
 END$$
 
 -- SELECT RESERVACIONES
@@ -310,6 +331,18 @@ BEGIN
 	ORDER BY id_insumo;
 END$$
 
+
+-- FILTRAR INSUMOS
+DELIMITER $$
+DROP PROCEDURE IF EXISTS filtrarProducto;
+CREATE PROCEDURE filtrarProducto(
+	IN _word VARCHAR(3))
+
+BEGIN
+	SELECT * FROM Productos
+	WHERE nombre LIKE _word
+	ORDER BY nombre;
+END$$
 
 
 
