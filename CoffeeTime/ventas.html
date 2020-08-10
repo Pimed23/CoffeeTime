@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-    <title>Coffee Time | Almacen</title>
+    <title>Coffee Time | Ventas</title>
     
 	<link rel="stylesheet" href="css/empleados.css">
 	<link rel="stylesheet" href="css/ventas.css">
@@ -18,11 +18,13 @@
 		crossorigin="anonymous">
 	</script>
 	<script type="text/javascript" src="js/mostrarProducto.js"></script>
+	<script type="text/javascript" src="js/insertVenta.js"></script>
+
 </head>
 <body>
 	<div id="menu">
 		<ul>
-			<li><a href="ventas.html" class="item-selected">Mesas</a></li>
+			<li><a href="tienda.html" class="item-selected">Mesas</a></li>
             <li><a href="facturas.html">Facturas</a></li>
             <li><a href="empleados.html">Admin</a></li>
 		</ul>
@@ -47,37 +49,11 @@
 			</div>
 		</div>
 		<div id="ordenes">
-			<table>
-				<thead>
-					<tr>
-						<th>Cantidad</th>
-						<th>Producto</th>
-						<th>Precio Unitario</th>
-						<th>Precio Total</th>
-					</tr>
-				</thead>
-				<tr>
-					<td>HOLA</td>
-					<td>HOLA</td>
-					<td>HOLA</td>
-					<td>HOLA</td>
-				</tr>
-				<tr>
-					<td>HOLA</td>
-					<td>HOLA</td>
-					<td>HOLA</td>
-					<td>HOLA</td>
-				</tr>
-				<tr>
-					<td>HOLA</td>
-					<td>HOLA</td>
-					<td>HOLA</td>
-					<td>HOLA</td>
-				</tr>
-
+			<table class="ventas">
+				<!-- DINAMIC-->
 			</table>
 			<div class="btn_send">
-				<input class="btn_reset" type="reset" value="Registrar Venta" onclick="location.href='agregar-producto.html'">
+				<input class="btn_reset" type="reset" value="Registrar Venta" onclick="enviar_data()">
 				<input class="btn_submit" type="submit" value="Agregar Producto" onclick="location.href='agregar-producto.html'">
 			</div>
 		</div>

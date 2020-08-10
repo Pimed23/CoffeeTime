@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Coffee Time | Agregar Factura</title>
+        <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+        <link href="css/login.css" rel=stylesheet>
+        <script src="js/login.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="form_top">
+                <h2>Nueva<span>Factura</span></h2>
+            </div>
+            <form name="n_form" class="form_reg" method="POST" action="php/insertFactura.php" onsubmit="return validar()" enctype="multipart/form-data">
+                <div>
+                    <label id="box-title">Ingrese los datos de la factura: </label>
+                    <br>
+                </div>
+                <div>
+                    <label for="nombre">Cod. Cliente: </label>
+                    <input class="input" type="text" id="cod_cliente" name="cod_cliente" placeholder="&#128100; Ingrese nombre del cliente"> 
+                </div>
+                <div>
+                    <label for="monto_pagado">Monto total: </label>
+                    <input class="input" type="text" id="monto_pagado" name="monto_pagado" placeholder="&#128100; Ingrese el monto a pagar"readonly>
+                </div>
+                <div>
+                    <label for="efectivo">Efectivo: </label>
+                    <input class="input" type="text" id="efectivo" name="efectivo" onkeyup="calcular_cambio()" placeholder="&#128100; Ingrese el monto pagado">
+                </div>
+                <div>
+                    <label for="cambio">Cambio: </label>
+                    <input class="input" type="text" id="cambio" name="cambio" on placeholder="&#128100; Ingrese el cambio del cliente" readonly>
+                </div>
+                <div>
+                    <label for="fech_ven">Fecha de Venta: </label>
+                    <input class="input" type="date" id="fech_ven" name="fech_ven" placeholder="&#128100; Ingrese fecha de la venta">
+                </div>
+
+                <label>Forma de pago:</label>
+                <div class="box">
+                    <select name="forma_pago" size="1">
+                        <option value="0">Seleccione el cargo</option>
+                        <option value="EFE">Efectivo</option>
+                        <option value="TAR">Tarjeta</option>
+                    </select>
+                </div>
+
+                <div class="btn_form">
+                    <input class="btn_reset" type="reset" value="Volver" onclick="location.href='ventas.html'">
+                    <input class="btn_submit" type="submit" value="Ingresar">
+                </div>
+            </form>
+        </div>
+    </body>
+    <script src="js/agregar-factura.js" type="text/javascript"></script>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-    <title>Coffee Time | Reservas</title>
+    <title>Coffee Time | Ordenes</title>
     
 	<link rel="stylesheet" href="css/empleados.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -15,25 +15,27 @@
 		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
 		crossorigin="anonymous">
 	</script>
-	<script type="text/javascript" src="js/mostrarReservas.js"></script>
-
+	<script type="text/javascript" src="js/mostrarPedido.js"></script>
 </head>
 <body>
 	<div id="menu">
 		<ul>
 			<li><a href="empleados.html">Empleados</a></li>
-			<li><a href="clientes.html">Clientes</a></li>
-			<li><a href="almacen.html">Almacen</a></li>
-			<li><a href="reservas.html" class="item-selected">Reservaciones</a></li>
-			<li><a href="pedidos.html">Pedidos</a></li>
+			<li><a href="clientes.html" >Clientes</a></li>
+			<li><a href="almacen.html" >Almacen</a></li>
+			<li><a href="reservas.html">Reservaciones</a></li>
+			<li><a href="pedidos.html" class="item-selected">Pedidos</a></li>
 			<li><a href="tienda.html">Ventas</a></li>
 		</ul>
     </div>
     
     <div id="main-container">
-		<table class=reservas>
-			<!-- DINAMIC TABLE-->
+		<table class="pedidos">
+			<!--DINAMIC TABLE-->
 		</table>
+	</div>
+	<div class="btn_send">
+		<input class="btn_reset" type="reset" value="Agregar Pedido" onclick="location.href='agregar-pedido.html'">
 	</div>
 </body>
 </html>

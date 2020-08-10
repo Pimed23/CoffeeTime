@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Coffee Time | Agregar Pedido</title>
+        <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+        <link href="css/login.css" rel=stylesheet>
+        <script src="js/login.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="form_top">
+                <h2>Nuevo<span>Pedido</span></h2>
+            </div>
+            <form name="n_form" class="form_reg" method="POST" action="php/insertPedido.php" onsubmit="return validar()" enctype="multipart/form-data">
+                <div>
+                    <label id="box-title">Ingrese los datos del pedido: </label>
+                    <br>
+                </div>
+                <div>
+                    <label for="id_insumo">Cod. Insumo: </label>
+                    <input class="input" type="text" id="id_insumo" name="id_insumo" placeholder="&#128100; Ingrese el codigo del insumo"> 
+                </div>
+                <div>
+                    <label for="cantidad">Cantidad: </label>
+                    <input class="input" type="text" id="cantidad" name="cantidad" placeholder="&#128100; Ingrese la cantidad del insumo">
+                </div>
+                <div>
+                    <label for="precio">Precio unitario: </label>
+                    <input class="input" type="text" id="precio" name="precio" placeholder="&#128100; Ingrese el precio del insumo">
+                </div>
+                <div>
+                    <label for="fech_ped">Fecha del pedido: </label>
+                    <input class="input" type="date" id="fech_ped" name="fech_ped" placeholder="&#128100; Ingrese fecha del pedido">
+                </div>
+                <label>Sucursal:</label>
+                <div class="box">
+                    <select name="local" size="1">
+                        <option value="0">Seleccione la sucursal</option>
+                        <option value="JLB">Bustamante</option>
+                        <option value="CER">Cercado</option>
+                        <option value="MIR">Miraflores</option>
+                        <option value="PAU">Paucarpata</option>
+                    </select>
+                </div>
+            
+                <div class="btn_form">
+                    <input class="btn_reset" type="reset" value="Volver" onclick="location.href='pedidos.html'">
+                    <input class="btn_submit" type="submit" value="Ingresar">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

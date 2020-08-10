@@ -1,6 +1,6 @@
 cargar_productos = function( productos ) {
     for( var i = 0; i < productos.length; ++i ) {
-        var row = "<li class=dinamic><a class=dinamic href='#'><img src='pictures/"+ productos[i]['imagen']+"' class='image__'></a></li>\n"
+        var row = "<li class=dinamic><a class=dinamic href='#?producto="+productos[i]['id_producto']+"' ondblclick='cargarVenta()'><img src='pictures/"+ productos[i]['imagen']+"' class='image__'></a></li>\n"
         $('.list-image').append(row);
     }
 }

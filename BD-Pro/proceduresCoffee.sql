@@ -140,6 +140,37 @@ BEGIN
 	VALUES(_id_reservacion, _fecha, _hora, _id_cliente);
 END$$
 
+-- INSERT FACTURA
+DELIMITER $$
+DROP PROCEDURE IF EXISTS insertarFactura;
+CREATE PROCEDURE insertarFactura(
+	IN _id_factura VARCHAR(3),
+	IN _fecha DATE,
+	IN _total_pagar SMALLINT UNSIGNED,
+	IN _efectivo SMALLINT UNSIGNED,
+	IN _cambio SMALLINT UNSIGNED,
+	IN _id_cliente VARCHAR(3),
+	IN _id_forma_pago VARCHAR(3))
+BEGIN
+	INSERT INTO Facturas(id_factura, fecha, total_pagar, efectivo, cambio, id_cliente, id_forma_pago) 
+	VALUES(_id_factura, _fecha, _total_pagar, _efectivo, _cambio, _id_cliente, _id_forma_pago);
+END$$
+
+-- INSERT PEDIDO
+DELIMITER $$
+DROP PROCEDURE IF EXISTS insertarPedido;
+CREATE PROCEDURE insertarPedido(
+	IN _id_pedido VARCHAR(3),
+	IN _fecha DATE,
+	IN _cantidad SMALLINT UNSIGNED,
+	IN _precio SMALLINT UNSIGNED,
+	IN _id_sucursal VARCHAR(3),
+	IN _id_insumo VARCHAR(3))
+BEGIN
+	INSERT INTO Pedidos(id_pedido, fecha, cantidad, precio, id_sucursal, id_insumo) 
+	VALUES(_id_pedido, _fecha, _cantidad, _precio, _id_sucursal, _id_insumo);
+END$$
+
 -- BUSCAR EMPLEADO
 DELIMITER $$
 DROP PROCEDURE IF EXISTS buscarEmpleado;
@@ -198,6 +229,18 @@ WHERE id_insumo LIKE _word
 ORDER BY id_insumo;
 END$$
 
+-- SELECT PEDIDO
+DELIMITER $$
+DROP PROCEDURE IF EXISTS selectPedido;
+CREATE PROCEDURE selectPedido( IN _id_sucursal VARCHAR(3))
+BEGIN
+	SELECT id_pedido, nombre, fecha, a.cantidad, precio FROM Pedidos a
+INNER JOIN Insumos b ON a.id_insumo = b.id_insumo
+WHERE id_sucursal = _id_sucursal
+ORDER BY id_pedido ;
+END$$
+
+
 -- SELECT PRODUCTOS
 DELIMITER $$
 DROP PROCEDURE IF EXISTS selectProducto;
@@ -215,6 +258,18 @@ BEGIN
 INNER JOIN Clientes b ON a.id_cliente = b.id_cliente
 WHERE id_reservacion LIKE _word
 ORDER BY id_reservacion;
+END$$
+
+-- SELECT RESERVACIONES
+DELIMITER $$
+DROP PROCEDURE IF EXISTS selectFacturas;
+CREATE PROCEDURE selectFacturas( IN _word VARCHAR(2))
+BEGIN
+SELECT id_factura, nombre, total_pagar, efectivo, cambio, fecha, modo FROM Facturas a
+INNER JOIN Clientes b ON a.id_cliente = b.id_cliente
+INNER JOIN Formas_Pago c ON a.id_forma_pago = c.id_forma_pago 
+WHERE id_factura LIKE _word
+ORDER BY id_factura;
 END$$
 
 -- ACTUALIZAR EMPLEADO
@@ -332,7 +387,7 @@ BEGIN
 END$$
 
 
--- FILTRAR INSUMOS
+-- FILTRAR PRODUCTO1
 DELIMITER $$
 DROP PROCEDURE IF EXISTS filtrarProducto;
 CREATE PROCEDURE filtrarProducto(
@@ -344,5 +399,15 @@ BEGIN
 	ORDER BY nombre;
 END$$
 
+-- FILTRAR PRODUCTO2
+DELIMITER $$
+DROP PROCEDURE IF EXISTS filtrarProducto1;
+CREATE PROCEDURE filtrarProducto1(
+	IN _id_producto VARCHAR(3))
+
+BEGIN
+	SELECT * FROM Productos
+	WHERE id_producto = _id_producto;
+END$$
 
 
