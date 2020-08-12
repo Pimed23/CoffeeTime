@@ -5,7 +5,7 @@ cargar_productos = function( productos ) {
     }
 }
 
-function limpiar() {
+function limpiarIMG() {
     $(".dinamic").remove();
     $("img").remove();
 }
@@ -40,7 +40,7 @@ function myFunction(){
             success: function( response ) {
                 console.log(response);
                 var productos = JSON.parse( response );
-                limpiar();
+                limpiarIMG();
                 cargar_productos( productos );
             },
             error: function(response, status, error) {
