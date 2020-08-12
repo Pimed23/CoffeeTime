@@ -8,7 +8,7 @@
         
     require("conectionDB.php");    
     
-    $clave = 'B0';
+    $clave = 'C0';
     
     $query0 = "SHOW TABLE STATUS WHERE Name = 'Facturas';";
     $res1 = mysqli_query( $conection, $query0 );

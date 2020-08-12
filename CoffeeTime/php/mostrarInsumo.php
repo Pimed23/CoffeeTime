@@ -1,7 +1,7 @@
 <?php
     require("conectionDB.php");
 
-    $filtro = 'B%';
+    $filtro = 'C%';
     $query = "CALL selectInsumo('$filtro')";
     $result = mysqli_query( $conection, $query );
 

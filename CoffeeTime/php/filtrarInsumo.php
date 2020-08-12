@@ -5,7 +5,7 @@
 
     $filtro = $word . '%';
     
-    $query = "CALL filtrarInsumo('$filtro','B%');";
+    $query = "CALL filtrarInsumo('$filtro','C%');";
     $result = mysqli_query( $conection, $query );
 
     $json_array = array();

@@ -1,7 +1,7 @@
 <?php
     require("conectionDB.php");
 
-    $filtro = 'JLB';
+    $filtro = 'CER';
     $query = "CALL selectPedido('$filtro')";
     $result = mysqli_query( $conection, $query );
 

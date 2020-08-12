@@ -1,7 +1,7 @@
 <?php
     require("conectionDB.php");
 
-    $filtro = 'B%';
+    $filtro = 'C%';
     $query = "CALL selectFacturas('$filtro')";
     $result = mysqli_query( $conection, $query );
 

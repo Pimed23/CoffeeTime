@@ -5,7 +5,7 @@
 
     $filtro = $word . '%';
     
-    $query = "CALL filtrarEmpleado('$filtro','JLB');";
+    $query = "CALL filtrarEmpleado('$filtro','CER');";
     $result = mysqli_query( $conection, $query );
 
     $json_array = array();
